@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kies jouw rit</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #000, #1a1a1a);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h1 {
+      color: gold;
+      text-shadow: 0 0 10px gold;
+      margin-bottom: 30px;
+    }
+
+    .knoppen {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .knoppen button {
+      background-color: gold;
+      color: black;
+      border: none;
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 0 15px gold;
+    }
+
+    .knoppen button:hover {
+      background-color: #ffce00;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <h1>Waarmee wilt u reizen?</h1>
+  <div class="knoppen">
+    <button onclick="window.location.href='klant.html'">🚗 Normale Taxi</button>
+    <button onclick="window.location.href='busje.html'">🚐 Busje</button>
+  </div>
+</body>
+</html>
