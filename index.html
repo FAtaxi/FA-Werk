@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FA Taxi Service</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #000000, #333333);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      color: red;
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+
+    .keuze-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .keuze-button {
+      background: gold;
+      color: black;
+      border: none;
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 200px;
+    }
+
+    .keuze-button:hover {
+      background-color: #ffcc00;
+      transform: scale(1.05);
+    }
+
+    .taxi-icon {
+      font-size: 60px;
+      margin-bottom: 20px;
+      animation: bounce 2s infinite;
+      color: gold;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="taxi-icon">
+    <i class="fas fa-taxi"></i>
+  </div>
+  <h1>FA Taxi Service</h1>
+  <div class="keuze-container">
+    <button class="keuze-button" onclick="window.location.href='taxi.html?type=normaal'">🚕 Normale Taxi</button>
+    <button class="keuze-button" onclick="window.location.href='taxi.html?type=busje'">🚐 Busje</button>
+  </div>
+</body>
+</html>
