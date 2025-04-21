@@ -1,76 +1,138 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FA Taxi Service</title>
+  <meta charset="UTF-8">
+  <title>Welkom bij FA Taxi Service</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #000000, #333333);
       color: white;
+      overflow: hidden;
+    }
+
+    body {
+      background: url('A_Welcome_webpage_for_FA_Taxi_Service_features_a_h.png') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
+      align-items: center;
+      backdrop-filter: brightness(0.8);
     }
 
     h1 {
-      color: red;
-      font-size: 3rem;
-      margin-bottom: 40px;
+      font-size: 3em;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px 40px;
+      border-radius: 12px;
+      animation: fadeInDown 2s ease-out;
     }
 
-    .keuze-container {
+    p {
+      margin-top: 10px;
+      font-size: 1.3em;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 25px;
+      border-radius: 10px;
+      animation: fadeIn 3s ease-in;
+    }
+
+    .knoppen {
+      margin-top: 30px;
       display: flex;
       gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
+      animation: fadeIn 3.5s ease-in;
     }
 
-    .keuze-button {
-      background: gold;
-      color: black;
-      border: none;
-      padding: 20px 30px;
-      border-radius: 12px;
-      font-size: 1.2rem;
+    .knoppen button {
+      padding: 15px 30px;
+      font-size: 1.2em;
       font-weight: bold;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      width: 200px;
+      background-color: gold;
+      color: black;
+      transition: background 0.3s;
     }
 
-    .keuze-button:hover {
-      background-color: #ffcc00;
-      transform: scale(1.05);
+    .knoppen button:hover {
+      background-color: #ffd700;
     }
 
-    .taxi-icon {
-      font-size: 60px;
-      margin-bottom: 20px;
-      animation: bounce 2s infinite;
-      color: gold;
+    .taxi {
+      position: absolute;
+      bottom: 20px;
+      left: -200px;
+      width: 180px;
+      animation: taxiDrive 10s linear infinite;
     }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+    .rook {
+      position: absolute;
+      bottom: 45px;
+      left: -200px;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(white, transparent);
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: rookWolk 3s linear infinite;
     }
+
+    @keyframes taxiDrive {
+      0% { left: -200px; }
+      100% { left: 120%; }
+    }
+
+    @keyframes rookWolk {
+      0% {
+        transform: scale(0.5) translateY(0);
+        opacity: 0.5;
+      }
+      100% {
+        transform: scale(1.5) translateY(-100px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
   </style>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="taxi-icon">
-    <i class="fas fa-taxi"></i>
+
+  <h1>Welkom bij FA Taxi Service</h1>
+  <p>Uw betrouwbare partner in vervoer – snel, professioneel en altijd op tijd.</p>
+
+  <div class="knoppen">
+    <button onclick="window.location.href='taxi.html'">🚖 Normale Taxi</button>
+    <button onclick="window.location.href='busje.html'">🚐 Busje</button>
   </div>
-  <h1>FA Taxi Service</h1>
-  <div class="keuze-container">
-    <button class="keuze-button" onclick="window.location.href='taxi.html?type=normaal'">🚕 Normale Taxi</button>
-    <button class="keuze-button" onclick="window.location.href='taxi.html?type=busje'">🚐 Busje</button>
-  </div>
+
+  <img class="taxi" src="https://i.imgur.com/2TgQeVm.png" alt="Taxi animatie" />
+  <div class="rook"></div>
+
 </body>
 </html>
