@@ -5,109 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FA Taxi Service - Welkom</title>
   <style>
-    * {
+    html, body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
-      background: url('achtergrond.jpg') no-repeat center center/cover;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAIAAADwf7zUAAEAAElEQVR4nFR9UZYku40rQPXnvFmAZ/+7LBHvA4Ai7TNj39tdlRkhUSQIghT5P/8hSWgFkoKAAQQIHK1mpEscjUYSCRArENCAAiCJGGABSosZSoJAEoQgASMAlMABJIAgFh...') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .welkom-container {
       text-align: center;
-      overflow: hidden;
-    }
-
-    .overlay {
       background-color: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      inset: 0;
-      z-index: 1;
+      padding: 50px 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .content {
-      position: relative;
-      z-index: 2;
-      color: #FFD700;
-      animation: fadeIn 2s ease-in-out, glow 2s infinite alternate;
-      text-shadow: 0 0 10px #fff200, 0 0 20px #ffcc00;
+    h1, h2 {
+      color: gold;
+      text-shadow: 0 0 10px #fff000, 0 0 20px #ffce00, 0 0 30px #ff9900;
+      margin: 0;
+      animation: glimmen 1.5s infinite alternate;
     }
 
     h1 {
       font-size: 3.5rem;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     h2 {
-      font-size: 2rem;
-      font-weight: normal;
-      color: #fff8dc;
+      font-size: 2.2rem;
+    }
+
+    @keyframes glimmen {
+      from { opacity: 0.85; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.03); }
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700;
-      }
-      100% {
-        text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700;
-      }
-    }
-
-    .taxi {
-      position: absolute;
-      bottom: 40px;
-      left: -200px;
-      width: 150px;
-      animation: drive 6s ease-in-out forwards;
-      z-index: 3;
-    }
-
-    @keyframes drive {
-      0%   { left: -200px; }
-      100% { left: 120%; }
-    }
-
-    .rook {
-      position: absolute;
-      bottom: 75px;
-      left: 100px;
-      width: 30px;
-      height: 30px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 50%;
-      animation: smoke 3s ease-in-out infinite;
-      z-index: 2;
-    }
-
-    @keyframes smoke {
-      0% { transform: scale(1) translateY(0); opacity: 1; }
-      100% { transform: scale(2) translateY(-100px); opacity: 0; }
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="content">
-    <h1>FA Taxi Service</h1>
-    <h2>Welkom</h2>
+  <div class="welkom-container">
+    <h1>Welkom</h1>
+    <h2>FA Taxi Service</h2>
   </div>
-
-  <img src="https://cdn-icons-png.flaticon.com/512/741/741407.png" alt="Taxi" class="taxi" />
-  <div class="rook"></div>
-
-  <script>
-    setTimeout(() => {
-      window.location.href = 'keuze.html';
-    }, 3000);
-  </script>
 </body>
 </html>
