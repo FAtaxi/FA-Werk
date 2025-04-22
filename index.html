@@ -13,28 +13,10 @@
 
     body {
       height: 100vh;
-      background: url('https://fataxi.github.io/FA-Werk/achtergrond.png') no-repeat center center fixed;
+      background: url('achtergrond.png') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
-    }
-
-    .glow-text {
-      font-size: 3.2em;
-      color: gold;
-      font-weight: bold;
-      text-align: center;
-      text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFA500;
-      animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 10px gold; }
-      to { text-shadow: 0 0 30px orange, 0 0 40px gold; }
+      font-family: 'Segoe UI', sans-serif;
     }
 
     .car {
@@ -42,24 +24,25 @@
       bottom: 40px;
       left: -200px;
       width: 120px;
-      animation: drive 10s linear infinite;
+      animation: drive 8s linear infinite;
+      z-index: 10;
     }
 
     .smoke {
       position: absolute;
-      bottom: 85px;
-      left: 30px;
+      bottom: 80px;
+      left: 70px;
       width: 20px;
       height: 20px;
-      background: #ccc;
+      background: rgba(200, 200, 200, 0.5);
       border-radius: 50%;
-      opacity: 0.5;
       animation: smoke 2s ease-out infinite;
+      z-index: 5;
     }
 
     @keyframes drive {
       0% { left: -200px; }
-      100% { left: 120%; }
+      100% { left: 110%; }
     }
 
     @keyframes smoke {
@@ -69,10 +52,23 @@
   </style>
 </head>
 <body>
-  <div class="glow-text">Welkom</div>
-  <div class="glow-text" style="font-size: 2.5em; margin-top: 15px;">FA Taxi Service</div>
-
-  <img src="https://i.imgur.com/Qa8U3Ru.png" alt="Taxi" class="car" />
+  <!-- Auto en rook -->
+  <img src="https://i.imgur.com/Qa8U3Ru.png" alt="Taxi" class="car" onload="toeterGeluidAfspelen()" />
   <div class="smoke"></div>
+
+  <!-- Toetergeluid -->
+  <audio id="toeter" autoplay>
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-retro-game-notification-212.wav" type="audio/wav">
+    Je browser ondersteunt geen audio.
+  </audio>
+
+  <script>
+    function toeterGeluidAfspelen() {
+      const audio = document.getElementById("toeter");
+      audio.play().catch(() => {
+        console.log("Toetergeluid wordt geblokkeerd door browser autoplay-beleid.");
+      });
+    }
+  </script>
 </body>
 </html>
