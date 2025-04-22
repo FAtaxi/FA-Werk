@@ -14,7 +14,7 @@
     body {
       height: 100vh;
       background: url('achtergrond.png') no-repeat center center fixed;
-      background-size: 100% 100%; /* Zorgt ervoor dat de afbeelding de hele breedte en hoogte bedekt */
+      background-size: cover; /* Zorgt ervoor dat de afbeelding de volledige breedte en hoogte bedekt */
       background-position: center center; /* Centert de afbeelding */
       overflow: hidden;
       position: relative;
@@ -31,7 +31,7 @@
 
     .smoke {
       position: absolute;
-      bottom: 85px;
+      bottom: 80px; /* De rook komt iets hoger dan de auto */
       left: 30px;
       width: 20px;
       height: 20px;
@@ -42,11 +42,13 @@
       z-index: 1;
     }
 
+    /* Animatie voor de taxi */
     @keyframes drive {
       0% { left: -200px; }
       100% { left: 120%; }
     }
 
+    /* Animatie voor de rook */
     @keyframes smoke {
       0% {
         transform: translateY(0) scale(1);
