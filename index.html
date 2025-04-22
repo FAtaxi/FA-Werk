@@ -3,64 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>FA Taxi Service - Welkom</title>
+  <title>FA Taxi Service</title>
   <style>
-    html, body {
+    * {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
     }
 
     body {
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABAAAAAQACAIAAADwf7zUAAEAAElEQVR4nFR9UZYku40rQPXnvFmAZ/+7LBHvA4Ai7TNj39tdlRkhUSQIghT5P/8hSWgFkoKAAQQIHK1mpEscjUYSCRArENCAAiCJGGABSosZSoJAEoQgASMAlMABJIAgFh...') no-repeat center center fixed;
+      height: 100vh;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABWgAAALcCAYAAABK2HsVAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAFf5JREFUeJzt3cEx5VgZB/DnWTBnck2WD2tPbN1NYw+0TwcSWcuKLgXGqxKYBhpl9kXzjMnv4+4v3oEU0wD8V4u0B4c5lLzOnyF7+ki9uSEhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkjIU+GAkwuzf3VdLOh9iRAAAAAElFTkSuQmCC') no-repeat center center fixed;
       background-size: cover;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
     }
 
-    .welkom-container {
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 50px 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    h1, h2 {
+    .glow-text {
+      font-size: 3.2em;
       color: gold;
-      text-shadow: 0 0 10px #fff000, 0 0 20px #ffce00, 0 0 30px #ff9900;
-      margin: 0;
-      animation: glimmen 1.5s infinite alternate;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FFA500;
+      animation: glow 2s infinite alternate;
     }
 
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
+    @keyframes glow {
+      from { text-shadow: 0 0 10px gold; }
+      to { text-shadow: 0 0 30px orange, 0 0 40px gold; }
     }
 
-    h2 {
-      font-size: 2.2rem;
+    .car {
+      position: absolute;
+      bottom: 40px;
+      left: -200px;
+      width: 120px;
+      animation: drive 10s linear infinite;
     }
 
-    @keyframes glimmen {
-      from { opacity: 0.85; transform: scale(1); }
-      to { opacity: 1; transform: scale(1.03); }
+    .smoke {
+      position: absolute;
+      bottom: 85px;
+      left: 30px;
+      width: 20px;
+      height: 20px;
+      background: #ccc;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: smoke 2s ease-out infinite;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes drive {
+      0% { left: -200px; }
+      100% { left: 120%; }
+    }
+
+    @keyframes smoke {
+      0% { transform: translateY(0) scale(1); opacity: 0.5; }
+      100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <div class="welkom-container">
-    <h1>Welkom</h1>
-    <h2>FA Taxi Service</h2>
-  </div>
+  <div class="glow-text">FA Taxi Service</div>
+  <div class="glow-text" style="font-size: 2.5em; margin-top: 15px;">Welkom</div>
+
+  <img src="https://i.imgur.com/Qa8U3Ru.png" alt="Taxi" class="car" />
+  <div class="smoke"></div>
 </body>
 </html>
