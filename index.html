@@ -16,59 +16,50 @@
       background: url('achtergrond.png') no-repeat center center fixed;
       background-size: cover;
       overflow: hidden;
-      font-family: 'Segoe UI', sans-serif;
+      position: relative;
     }
 
     .car {
       position: absolute;
       bottom: 40px;
       left: -200px;
-      width: 120px;
-      animation: drive 8s linear infinite;
-      z-index: 10;
+      width: 150px;
+      z-index: 2;
+      animation: drive 10s linear infinite;
     }
 
     .smoke {
       position: absolute;
-      bottom: 80px;
-      left: 70px;
+      bottom: 85px;
+      left: 30px;
       width: 20px;
       height: 20px;
-      background: rgba(200, 200, 200, 0.5);
+      background: #ccc;
       border-radius: 50%;
+      opacity: 0.5;
       animation: smoke 2s ease-out infinite;
-      z-index: 5;
+      z-index: 1;
     }
 
     @keyframes drive {
       0% { left: -200px; }
-      100% { left: 110%; }
+      100% { left: 120%; }
     }
 
     @keyframes smoke {
-      0% { transform: translateY(0) scale(1); opacity: 0.5; }
-      100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-50px) scale(1.5);
+        opacity: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Auto en rook -->
-  <img src="https://i.imgur.com/Qa8U3Ru.png" alt="Taxi" class="car" onload="toeterGeluidAfspelen()" />
+  <img src="https://i.imgur.com/Qa8U3Ru.png" alt="Taxi" class="car" />
   <div class="smoke"></div>
-
-  <!-- Toetergeluid -->
-  <audio id="toeter" autoplay>
-    <source src="https://assets.mixkit.co/sfx/preview/mixkit-retro-game-notification-212.wav" type="audio/wav">
-    Je browser ondersteunt geen audio.
-  </audio>
-
-  <script>
-    function toeterGeluidAfspelen() {
-      const audio = document.getElementById("toeter");
-      audio.play().catch(() => {
-        console.log("Toetergeluid wordt geblokkeerd door browser autoplay-beleid.");
-      });
-    }
-  </script>
 </body>
 </html>
