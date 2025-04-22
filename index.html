@@ -14,7 +14,8 @@
     body {
       height: 100vh;
       background: url('achtergrond.png') no-repeat center center fixed;
-      background-size: cover;
+      background-size: contain; /* Zorgt ervoor dat de afbeelding proportioneel kleiner wordt weergegeven */
+      background-position: center center; /* Centert de afbeelding */
       overflow: hidden;
       position: relative;
     }
