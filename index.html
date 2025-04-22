@@ -13,7 +13,7 @@
 
     body {
       height: 100vh;
-      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABWgAAALcCAYAAABK2HsVAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAFf5JREFUeJzt3cEx5VgZB/DnWTBnck2WD2tPbN1NYw+0TwcSWcuKLgXGqxKYBhpl9kXzjMnv4+4v3oEU0wD8V4u0B4c5lLzOnyF7+ki9uSEhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkgIAAAQeFiIhISkpKSkjIU+GAkwuzf3VdLOh9iRAAAAAElFTkSuQmCC') no-repeat center center fixed;
+      background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXgAAAF4CAYAAAA9A/xRAAAABmJLR0QA/wD/AP+gvaeTAAAgAElEQVR4nOzde5AVxZ3/8XfW7ikKAgkhNSQEJED0RIEjJk1bdsmSJc2ZMmTJmzJgxY5N+AjIUEImBAURBBA1gEEFFBfxRUBekBNKAjzXfpzf+yc3tt+fw4v5mtW0ne57vzznmzMyZcuTJkyZMmTJkyZMmTJkyb8CvE5p2QABAAAEIAABCAAAQgAAEIAABCAAAQgAAEIAABCAAAQgAAEIAABCAAAQgAAEIAABCAAAQkGK/nZoHZoX8D3QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHzoP7QvWD3YfehPqHz7/oFQAABCAAAQgAAEIAABCAAAQgAAEIAABCAAAQgAAEIAABCAAAQgAAEIAABCAAAQgAAEIAAELgF1jszA4X47JAAAAAElFTkSuQmCC') no-repeat center center fixed;
       background-size: cover;
       display: flex;
       flex-direction: column;
@@ -24,7 +24,7 @@
     }
 
     .glow-text {
-      font-size: 3.2em;
+      font-size: 3em;
       color: gold;
       font-weight: bold;
       text-align: center;
@@ -39,22 +39,24 @@
 
     .car {
       position: absolute;
-      bottom: 40px;
+      bottom: 50px;
       left: -200px;
       width: 120px;
       animation: drive 10s linear infinite;
+      z-index: 2;
     }
 
     .smoke {
       position: absolute;
-      bottom: 85px;
-      left: 30px;
+      bottom: 95px;
+      left: 40px;
       width: 20px;
       height: 20px;
       background: #ccc;
       border-radius: 50%;
       opacity: 0.5;
       animation: smoke 2s ease-out infinite;
+      z-index: 1;
     }
 
     @keyframes drive {
@@ -69,8 +71,8 @@
   </style>
 </head>
 <body>
-  <div class="glow-text">FA Taxi Service</div>
-  <div class="glow-text" style="font-size: 2.5em; margin-top: 15px;">Welkom</div>
+  <div class="glow-text" style="font-size: 2.2em;">Welkom</div>
+  <div class="glow-text" style="font-size: 3.5em; margin-top: 15px;">FA Taxi Service</div>
 
   <img src="https://i.imgur.com/Qa8U3Ru.png" alt="Taxi" class="car" />
   <div class="smoke"></div>
