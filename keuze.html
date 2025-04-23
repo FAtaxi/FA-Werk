@@ -5,46 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kies je voertuig</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #000, #222);
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       color: white;
-      text-align: center;
-      padding-top: 100px;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       color: gold;
-      text-shadow: 0 0 10px gold;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+      animation: fadeIn 2s ease-in-out;
     }
 
     .button-group {
       margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: fadeInUp 2s ease-in-out 1s forwards;
+      opacity: 0;
     }
 
     button {
       background-color: gold;
       color: black;
+      padding: 15px 40px;
+      font-size: 1.3em;
       border: none;
-      padding: 15px 30px;
-      margin: 10px;
-      font-size: 1.2em;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
     }
 
     button:hover {
-      background-color: #e5c100;
-      transform: scale(1.05);
+      background-color: #f7d100;
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <h1>Kies je voertuig</h1>
   <div class="button-group">
-    <button onclick="window.location.href='klant.html'">🚖 Taxi</button>
+    <button onclick="window.location.href='klant.html'">🚖 Normale Taxi</button>
     <button onclick="window.location.href='busje.html'">🚐 Busje</button>
   </div>
 </body>
