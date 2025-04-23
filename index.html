@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FA Taxi Service</title>
   <style>
     * {
@@ -19,8 +19,9 @@
     }
 
     body {
-      background: url('achtergrond.png') no-repeat center center fixed;
-      background-size: cover;
+      background: url('achtergrond.jpg') no-repeat center center fixed;
+      background-size: contain;
+      background-color: black;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -29,27 +30,24 @@
 
     .car {
       position: absolute;
-      bottom: 30px;
-      left: -300px;
-      width: 200px;
+      bottom: 20px;
+      left: -250px;
+      width: 180px;
       animation: drive 12s linear infinite;
+      z-index: 10;
     }
 
     @keyframes drive {
-      0% {
-        left: -300px;
-      }
-      100% {
-        left: 110%;
-      }
+      0% { left: -250px; }
+      100% { left: 110%; }
     }
 
     .smoke {
       position: absolute;
-      bottom: 80px;
-      left: 60px;
-      width: 20px;
-      height: 20px;
+      bottom: 75px;
+      left: 80px;
+      width: 25px;
+      height: 25px;
       background: rgba(200, 200, 200, 0.4);
       border-radius: 50%;
       animation: puff 2s ease-out infinite;
@@ -61,7 +59,7 @@
         opacity: 0.5;
       }
       100% {
-        transform: translateY(-60px) scale(2);
+        transform: translateY(-50px) scale(1.8);
         opacity: 0;
       }
     }
@@ -69,8 +67,9 @@
 </head>
 <body>
 
-  <!-- Auto -->
+  <!-- Rijdende auto -->
   <img src="taxi.png" alt="Rijdende taxi" class="car" />
+  
   <!-- Uitlaat rook -->
   <div class="smoke"></div>
 
