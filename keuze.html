@@ -3,57 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kies jouw rit</title>
+  <title>Kies je voertuig</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #000, #1a1a1a);
+      background: linear-gradient(to right, #000, #222);
       color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      text-align: center;
+      padding-top: 100px;
     }
 
     h1 {
+      font-size: 2.5em;
       color: gold;
       text-shadow: 0 0 10px gold;
-      margin-bottom: 30px;
     }
 
-    .knoppen {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
+    .button-group {
+      margin-top: 50px;
     }
 
-    .knoppen button {
+    button {
       background-color: gold;
       color: black;
       border: none;
-      padding: 20px 30px;
-      border-radius: 12px;
-      font-size: 1.2rem;
-      font-weight: bold;
+      padding: 15px 30px;
+      margin: 10px;
+      font-size: 1.2em;
+      border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s ease;
-      box-shadow: 0 0 15px gold;
+      transition: all 0.3s ease;
     }
 
-    .knoppen button:hover {
-      background-color: #ffce00;
+    button:hover {
+      background-color: #e5c100;
       transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <h1>Waarmee wilt u reizen?</h1>
-  <div class="knoppen">
-    <button onclick="window.location.href='klant.html'">🚗 Normale Taxi</button>
+  <h1>Kies je voertuig</h1>
+  <div class="button-group">
+    <button onclick="window.location.href='klant.html'">🚖 Taxi</button>
     <button onclick="window.location.href='busje.html'">🚐 Busje</button>
   </div>
 </body>
