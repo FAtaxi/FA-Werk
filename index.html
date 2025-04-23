@@ -11,60 +11,78 @@
       box-sizing: border-box;
     }
 
-    body {
-      height: 100vh;
-      background: url('achtergrond.png') no-repeat center center fixed;
-      background-size: cover; /* Zorgt ervoor dat de afbeelding de volledige breedte en hoogte bedekt */
-      background-position: center center; /* Centert de afbeelding */
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Segoe UI', sans-serif;
       overflow: hidden;
+    }
+
+    body {
+      background: url('achtergrond.png') center center no-repeat;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
     }
 
     .car {
       position: absolute;
-      bottom: 40px;
+      bottom: 50px;
       left: -200px;
-      width: 150px;
-      z-index: 2;
+      width: 140px;
+      z-index: 10;
       animation: drive 10s linear infinite;
     }
 
     .smoke {
       position: absolute;
-      bottom: 80px; /* De rook komt iets hoger dan de auto */
-      left: 30px;
-      width: 20px;
-      height: 20px;
-      background: #ccc;
+      bottom: 95px;
+      left: 50px;
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle, #ccc 20%, transparent 70%);
       border-radius: 50%;
       opacity: 0.5;
-      animation: smoke 2s ease-out infinite;
-      z-index: 1;
+      animation: smoke 2.5s ease-out infinite;
+      z-index: 5;
     }
 
-    /* Animatie voor de taxi */
     @keyframes drive {
       0% { left: -200px; }
       100% { left: 120%; }
     }
 
-    /* Animatie voor de rook */
     @keyframes smoke {
       0% {
         transform: translateY(0) scale(1);
         opacity: 0.5;
       }
       100% {
-        transform: translateY(-50px) scale(1.5);
+        transform: translateY(-60px) scale(1.5);
         opacity: 0;
       }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.3); /* lichte donkere overlay voor leesbaarheid indien nodig */
+      z-index: 1;
     }
   </style>
 </head>
 <body>
+
+  <div class="overlay"></div>
+
+  <!-- Rijdende taxi en rookplofje -->
   <img src="https://i.imgur.com/Qa8U3Ru.png" alt="Taxi" class="car" />
   <div class="smoke"></div>
-  <div class="smoke" style="left: 60px;"></div>
-  <div class="smoke" style="left: 90px;"></div>
+
 </body>
 </html>
